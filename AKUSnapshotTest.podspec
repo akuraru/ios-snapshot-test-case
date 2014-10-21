@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name         = "FBSnapshotTestCase"
-  s.version      = "1.1"
+  s.name         = "AKUSnapshotTest"
+  s.version      = "0.1.0"
   s.summary      = "Snapshot view unit tests for iOS"
   s.description  = <<-DESC
                     A "snapshot test case" takes a configured UIView or CALayer
@@ -13,13 +13,16 @@ Pod::Spec.new do |s|
 
   s.license      = 'BSD'
   s.author       = 'Facebook'
-  s.source       = { :git => "https://github.com/facebook/ios-snapshot-test-case.git",
+  s.source       = { :git => "https://github.com/akuraru/ios-snapshot-test-case.git",
                      :tag => s.version.to_s }
   s.platform     = :ios, '6.0'
   s.requires_arc = true
   s.framework    = 'XCTest'
 
-  s.source_files = 'FBSnapshotTestCase.{h,m}', 'FBSnapshotTestController.{h,m}', 'UIImage+*{h,m}'
+  s.source_files = 'Pod/Classes'
+  s.resource_bundles = {
+    'AKUAssetManager' => ['Pod/Assets/*.png']
+  }
 
   fb_def = 'FB_REFERENCE_IMAGE_DIR'
   fb_val = '"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages"'
